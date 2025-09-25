@@ -1,4 +1,7 @@
 import mlflow
+
+# Force MLflow to log locally in a folder safe in CI
+mlflow.set_tracking_uri("file:///tmp/mlruns")
 import mlflow.sklearn
 from sklearn.datasets import load_iris
 from sklearn.linear_model import LogisticRegression
