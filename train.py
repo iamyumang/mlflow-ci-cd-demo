@@ -1,12 +1,14 @@
 import mlflow
 
-# Force MLflow to log locally in a folder safe in CI
+# Force MLflow to write logs to a safe folder in CI
 mlflow.set_tracking_uri("file:///tmp/mlruns")
+
 import mlflow.sklearn
 from sklearn.datasets import load_iris
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
+import os
 
 def main():
     X, y = load_iris(return_X_y=True)
@@ -21,12 +23,7 @@ def main():
     acc = accuracy_score(y_test, preds)
     print(f"Accuracy: {acc:.4f}")
 
-    # Log to MLflow (creates a run in mlruns if running locally)
-    with mlflow.start_run():
-        mlflow.log_metric("accuracy", acc)
-        mlflow.sklearn.log_model(model, "mlflow_model")
-
-    # Also save locally for Docker packaging
+    # Save model locally (for Docker)
     mlflow.sklearn.save_model(model, "model")
 
 if __name__ == "__main__":
