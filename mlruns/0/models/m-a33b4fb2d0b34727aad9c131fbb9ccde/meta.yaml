@@ -1,0 +1,10 @@
+artifact_location: file:///Users/umang.singh/Desktop/ci_cd_demo/mlflow-ci-cd-demo/mlruns/0/models/m-a33b4fb2d0b34727aad9c131fbb9ccde/artifacts
+creation_timestamp: 1758777859587
+experiment_id: '0'
+last_updated_timestamp: 1758777861028
+model_id: m-a33b4fb2d0b34727aad9c131fbb9ccde
+model_type: null
+name: mlflow_model
+source_run_id: fd4a5b0283bd4f8ca2efcaadbc807002
+status: 2
+status_message: null

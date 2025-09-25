@@ -1,0 +1,29 @@
+name: CI-CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install --upgrade pip && pip install mlflow scikit-learn
+
+      - name: Train model (creates ./model)
+        run: python train.py
+
+      - name: Show model dir
+        run: ls -la model || true
+
+      - name: Build Docker image
+        run: docker build -t iris-mlflow:latest .

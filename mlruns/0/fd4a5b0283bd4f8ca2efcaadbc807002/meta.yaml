@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/umang.singh/Desktop/ci_cd_demo/mlflow-ci-cd-demo/mlruns/0/fd4a5b0283bd4f8ca2efcaadbc807002/artifacts
+end_time: 1758777861034
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: fd4a5b0283bd4f8ca2efcaadbc807002
+run_name: carefree-ant-622
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1758777859555
+status: 3
+tags: []
+user_id: umang.singh
