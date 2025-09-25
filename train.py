@@ -1,14 +1,12 @@
 import mlflow
-
-# Force MLflow to write logs to a safe folder in CI
-mlflow.set_tracking_uri("file:///tmp/mlruns")
+mlflow.set_tracking_uri("file:///tmp/mlruns")  # Fix for GitHub Actions
 
 import mlflow.sklearn
 from sklearn.datasets import load_iris
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
-import os
+
 
 def main():
     X, y = load_iris(return_X_y=True)
